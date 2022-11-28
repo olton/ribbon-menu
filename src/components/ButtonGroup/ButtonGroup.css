@@ -1,0 +1,20 @@
+.ribbon-toggle-group {
+  background-color: #f8f8f8;
+  display: flex;
+  flex-flow: column wrap;
+  border: 1px solid #dadbdc;
+  width: auto;
+}
+.ribbon-toggle-group .ribbon-icon-button {
+  height: 20px;
+  margin: 1px;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  line-height: 1.6;
+}
+.ribbon-toggle-group .ribbon-icon-button > * {
+  height: 18px;
+}
+/*# sourceMappingURL=ButtonGroup.css.map */

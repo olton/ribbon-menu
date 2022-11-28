@@ -1,0 +1,68 @@
+@import "../../common/vars";
+@import "../../common/mixins";
+
+.ribbon-button {
+    .init-button()
+}
+
+.ribbon-button {
+    height: auto;
+    min-height: 64px;
+    width: auto;
+    padding: 4px 8px;
+    margin: 0;
+
+    .caption, .icon {
+        display: block;
+        text-align: center;
+    }
+
+    .caption {
+        font-size: 12px;
+    }
+
+    .icon {
+
+        * {
+            height: 32px;
+            max-width: 32px;
+            font-size: 26px;
+            line-height: 32px;
+        }
+    }
+
+    .icon + .caption {
+        //margin-top: 8px;
+    }
+
+    &.dropdown-toggle {
+        padding-right: 12px !important;
+
+        &::before {
+            margin-left: -8px;
+        }
+    }
+}
+
+.ribbon-button {
+    &:hover:enabled, &:not(.disabled):hover {
+        border-color: @ribbonMenuItemBorder;
+        background-color: @ribbonMenuItemHoverBackground;
+    }
+}
+
+.ribbon-button {
+    &:active, &.active {
+        border-color: @ribbonMenuItemActiveBorder;
+        background-color: @ribbonMenuItemActiveBackground !important;
+    }
+}
+
+.ribbon-menu {
+    .active-container {
+        .ribbon-button {
+            border-color: @ribbonMenuItemActiveBorder;
+            background-color: @ribbonMenuItemActiveBackground !important;
+        }
+    }
+}

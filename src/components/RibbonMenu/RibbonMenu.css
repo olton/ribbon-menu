@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.no-overflow {
+  overflow: hidden;
+}
+.ribbon-menu {
+  display: block;
+  position: relative;
+}
+.ribbon-menu div {
+  position: relative;
+}
+.ribbon-menu .tabs-holder {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none inside;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid #dadbdc;
+}
+.ribbon-menu .tabs-holder li,
+.ribbon-menu .tabs-holder a {
+  display: block;
+  height: 24px;
+  line-height: 24px;
+}
+.ribbon-menu .tabs-holder li {
+  color: #000000;
+  background-color: #ffffff;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid #dadbdc;
+  cursor: pointer;
+}
+.ribbon-menu .tabs-holder li:hover {
+  border-left-color: #dadbdc;
+  border-right-color: #dadbdc;
+  border-top-color: #dadbdc;
+}
+.ribbon-menu .tabs-holder li + li {
+  margin-left: 3px;
+}
+.ribbon-menu .tabs-holder a {
+  text-decoration: none;
+  padding: 0 14px;
+  font-size: 12px;
+  background-color: inherit;
+  color: inherit;
+}
+.ribbon-menu .tabs-holder .active {
+  background-color: #f5f6f7;
+  border: 1px solid #dadbdc;
+  border-bottom-color: transparent;
+}
+.ribbon-menu .tabs-holder .static {
+  background-color: #1979ca;
+  color: #ffffff;
+}
+.ribbon-menu .content-holder {
+  display: block;
+  position: relative;
+  background-color: #f5f6f7;
+  border-left: none;
+  border-right: none;
+}
+.ribbon-menu .content-holder .ribbon-section {
+  display: none;
+  padding: 4px 4px;
+  border-bottom: 1px solid #dadbdc;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+.ribbon-menu .content-holder .ribbon-section.active {
+  display: flex;
+}
+.ribbon-menu .content-holder .ribbon-divider {
+  display: block;
+  position: relative;
+  margin: 0 4px;
+  height: 100%!important;
+  width: 1px;
+  background-color: #dadbdc;
+}
+.ribbon-menu .content-holder .group {
+  padding: 0 4px 24px;
+  display: flex;
+  cursor: default;
+  background-color: inherit;
+  position: relative;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-shrink: 0;
+}
+.ribbon-menu .content-holder .group:nth-child(1):last-child {
+  flex-basis: 100%;
+}
+.ribbon-menu .content-holder .group .title {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  line-height: 24px;
+  height: 20px;
+  font-size: 11px;
+  text-align: center;
+  border-top: 1px solid #dadbdc;
+  white-space: nowrap;
+}
+.ribbon-menu .content-holder .group > *:not(.title) {
+  margin: 2px;
+}
+.ribbon-menu .content-holder .group + .group {
+  border-left: 1px solid #dadbdc;
+}
+/*# sourceMappingURL=RibbonMenu.css.map */

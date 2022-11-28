@@ -1,0 +1,149 @@
+@import "../../common/vars";
+@import "../../common/mixins";
+
+*,
+*::before,
+*::after { box-sizing:border-box; }
+
+.no-overflow {
+    overflow: hidden;
+}
+
+.ribbon-menu {
+    display: block;
+    position: relative;
+
+    div {
+        position: relative;
+    }
+}
+
+.ribbon-menu {
+    .tabs-holder {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        list-style: none inside;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        z-index: 1;
+        border-bottom: 1px solid @ribbonMenuBorder;
+    }
+
+    .tabs-holder {
+        li, a {
+            display: block;
+            height: 24px;
+            line-height: 24px;
+        }
+
+        li {
+            color: @dark;
+            background-color: @ribbonMenuBackground;
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+            border-bottom: 1px solid @ribbonMenuBorder;
+            cursor: pointer;
+
+            &:hover {
+                border-left-color: @ribbonMenuBorder;
+                border-right-color: @ribbonMenuBorder;
+                border-top-color: @ribbonMenuBorder;
+            }
+        }
+
+        li + li {
+            margin-left: 3px;
+        }
+
+        a {
+            text-decoration: none;
+            padding: 0 14px;
+            font-size: 12px;
+            background-color: inherit;
+            color: inherit;
+        }
+
+        .active {
+            background-color: @ribbonMenuActiveBackground;
+            border: 1px solid @ribbonMenuBorder;
+            border-bottom-color: transparent;
+        }
+
+        .static {
+            background-color: @ribbonMenuStaticBackground;
+            color: @white;
+        }
+    }
+}
+
+.ribbon-menu {
+    .content-holder {
+        display: block;
+        position: relative;
+        background-color: @ribbonMenuActiveBackground;
+        border-left: none;
+        border-right: none;
+    }
+
+    .content-holder {
+        .ribbon-section {
+            display: none;
+            padding: 4px 4px;
+            border-bottom: 1px solid @ribbonMenuBorder;
+            justify-content: flex-start;
+            flex-shrink: 0;
+
+            &.active {
+                display: flex;
+            }
+        }
+
+        .ribbon-divider {
+            display: block;
+            position: relative;
+            margin: 0 4px;
+            height: 100%!important;
+            width: 1px;
+            background-color: @ribbonMenuBorder;
+        }
+
+        .group {
+            padding: 0 4px 24px;
+            display: flex;
+            cursor: default;
+            background-color: inherit;
+            position: relative;
+            align-items: flex-start;
+            align-content: flex-start;
+            flex-shrink: 0;
+
+            &:nth-child(1):last-child {
+                flex-basis: 100%;
+            }
+
+            .title {
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                line-height: 24px;
+                height: 20px;
+                font-size: 11px;
+                text-align: center;
+                border-top: 1px solid @ribbonMenuBorder;
+                white-space: nowrap;
+            }
+
+            & > *:not(.title) {
+                margin: 2px;
+            }
+        }
+
+        .group + .group {
+            border-left: 1px solid @ribbonMenuBorder;
+        }
+    }
+}

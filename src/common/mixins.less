@@ -1,0 +1,53 @@
+@import "vars";
+
+.rotate(@degrees) {
+    transform+_: rotate(@degrees);
+}
+
+.translateX(@x: 0) {
+    transform+_: translateX(@x);
+}
+
+.translateY(@y: 0) {
+    transform+_: translateY(@y);
+}
+
+.toggle() {
+    position: relative;
+    cursor: pointer;
+    padding-right: 1.5rem;
+    user-select: none;
+
+    &::before {
+        display: block;
+        position: absolute;
+        vertical-align: middle;
+        color: transparent;
+        font-size: 0;
+        content: "";
+        height: 5px;
+        width: 5px;
+        background-color: transparent ;
+        border-left: 1px solid;
+        border-bottom: 1px solid;
+        border-color: @dark;
+        top: 50%;
+        left: 100%;
+        margin-left: -1rem;
+        margin-top: -.1625rem;
+        z-index: 2;
+        transform: rotate(-45deg);
+        transition: @transition-short;
+        transform-origin: center center 1px;
+    }
+}
+
+.init-button() {
+    cursor: pointer;
+    min-width: 0;
+    text-align: center;
+    border: 1px solid transparent;
+    background-color: @ribbonMenuActiveBackground;
+    outline: none;
+    position: relative;
+}
