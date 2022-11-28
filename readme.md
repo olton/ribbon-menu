@@ -16,6 +16,22 @@ Contextual tabs are tabs that appear only when the user needs them.
 - You can contact to sponsor on https://octostar.co/contact-us/
 <hr>
 
+## Install
+```shell
+npm install --save @olton/ribbon-menu
+```
+
+## Using
+```jsx
+<RibbonMenu>
+    <RibbonTabGroup title="Group Title">
+        <RibbonButton caption="Mail" icon="mif-envelop"/>
+        <RibbonIconButton caption="Mail" icon="mif-envelop"/>
+        <RibbonToolButton icon="mif-envelop"/>
+    </RibbonTabGroup>
+</RibbonMenu>
+```
+
 ### Metro UI
 Original component created by [Serhii Pimenov](https://pimenov.com.ua) for [Metro UI](https://korzh.com/metroui).
 

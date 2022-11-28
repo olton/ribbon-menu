@@ -37,7 +37,7 @@ const App = () => {
                     <RibbonTab mode="static" label="Home"></RibbonTab>
                     <RibbonTab label="File">
                         <RibbonTabGroup title="Push Buttons">
-                            <RibbonButton caption="Mail" icon="mif-envelop"/>
+                            <RibbonButton caption="Mail" icon="mif-envelop" title="Write Mail"/>
                             <RibbonButton caption="Share" icon="mif-share"/>
                         </RibbonTabGroup>
 

@@ -10,15 +10,16 @@ export interface RibbonToolButtonProps {
     icon?: string,
     image?: string,
     children?: any
+    caption?: string
 }
 
-const RibbonToolButton = ({className, icon, image, ...rest}: RibbonToolButtonProps) => {
+const RibbonToolButton = ({className, caption = '', icon, image, ...rest}: RibbonToolButtonProps) => {
     const classes = classNames(
         "ribbon-tool-button",
         className
     )
     return (
-        <button className={classes} {...rest}>
+        <button className={classes} title={caption} {...rest}>
             {icon && (
                 <Icon name={icon} />
             )}
