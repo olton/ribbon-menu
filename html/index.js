@@ -9,7 +9,8 @@ import {
     RibbonButton,
     RibbonIconButton,
     RibbonToolButton,
-    RibbonButtonGroup
+    RibbonButtonGroup,
+    RibbonDropdown
 } from "../dist/esm/index.js";
 
 import "./index.css"
