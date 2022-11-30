@@ -17,7 +17,7 @@ class RibbonDropdown extends React.Component<any, any>{
         isOpen: false
     }
 
-    private dropdown
+    private dropdown: any
 
     constructor(props: RibbonDropdownProps) {
         super(props);
@@ -39,6 +39,7 @@ class RibbonDropdown extends React.Component<any, any>{
     }
 
     handleClickOutside (e: Event) {
+        console.log(e)
         // @ts-ignore
         if (this.dropdown.current && !this.dropdown.current.contains(e.target)) {
             this.setState({
@@ -66,8 +67,9 @@ class RibbonDropdown extends React.Component<any, any>{
             isOpen ? 'dropped' : ''
         )
 
+
         return (
-            <div className={classes}>
+            <div className={classes} ref={this.dropdown}>
                 {/*@ts-ignore*/
                     toggle && cloneElement(toggle, {
                         /*@ts-ignore*/
