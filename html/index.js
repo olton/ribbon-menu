@@ -51,9 +51,9 @@ const App = () => {
                                     <RibbonDropdownItem caption="Windows 11"/>
                                     <RibbonDropdownItem caption="Office 365"/>
                                     <RibbonDropdownDivider/>
-                                    <RibbonDropdownItem checked caption="Windows 10"/>
-                                    <RibbonDropdownItem checked caption="Windows 11"/>
-                                    <RibbonDropdownItem checked caption="Office 365"/>
+                                    <RibbonDropdownCheckItem checked caption="Windows 10"/>
+                                    <RibbonDropdownCheckItem checked caption="Windows 11"/>
+                                    <RibbonDropdownCheckItem checked caption="Office 365"/>
                                     <RibbonDropdownDivider/>
                                     <RibbonDropdown>
                                         <RibbonDropdownItem caption="Apps"/>

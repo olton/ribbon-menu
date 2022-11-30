@@ -27,6 +27,7 @@
 .ribbon-dropdown li {
   border: 1px solid transparent;
   padding-left: 24px;
+  user-select: none;
 }
 .ribbon-dropdown li:not([disabled]):hover,
 .ribbon-dropdown li:not(.disabled):hover {
@@ -46,8 +47,13 @@
   width: 100%;
   position: relative;
   background-color: #dcddde;
-  margin: 4px 0;
   pointer-events: none;
+}
+.ribbon-dropdown * + .divider {
+  margin-top: 4px;
+}
+.ribbon-dropdown .divider + * {
+  margin-top: 4px;
 }
 .ribbon-dropdown .checked::before,
 .ribbon-dropdown .checked-one::before,

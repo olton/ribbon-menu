@@ -30,6 +30,7 @@
     li {
         border: 1px solid transparent;
         padding-left: 24px;
+        user-select: none;
 
         &:not([disabled]):hover, &:not(.disabled):hover {
             border-color: @ribbonMenuItemBorder;
@@ -51,8 +52,15 @@
         width: 100%;
         position: relative;
         background-color: @ribbonDropdownDivider;
-        margin: 4px 0;
         pointer-events:none;
+    }
+
+    * + .divider {
+        margin-top: 4px;
+    }
+
+    .divider + * {
+        margin-top: 4px;
     }
 
     .checked, .checked-one, .checked-item {
