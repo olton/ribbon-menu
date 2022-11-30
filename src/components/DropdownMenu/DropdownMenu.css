@@ -58,16 +58,19 @@
 .ribbon-dropdown .checked::before,
 .ribbon-dropdown .checked-one::before,
 .ribbon-dropdown .checked-item::before,
+.ribbon-dropdown .active::before,
 .ribbon-dropdown .checked::after,
 .ribbon-dropdown .checked-one::after,
-.ribbon-dropdown .checked-item::after {
+.ribbon-dropdown .checked-item::after,
+.ribbon-dropdown .active::after {
   position: absolute;
   display: block;
   content: "";
 }
 .ribbon-dropdown .checked::before,
 .ribbon-dropdown .checked-one::before,
-.ribbon-dropdown .checked-item::before {
+.ribbon-dropdown .checked-item::before,
+.ribbon-dropdown .active::before {
   background-color: transparent;
   border-color: #000000;
   border-left: 2px solid;
@@ -81,7 +84,8 @@
 }
 .ribbon-dropdown .checked::after,
 .ribbon-dropdown .checked-one::after,
-.ribbon-dropdown .checked-item::after {
+.ribbon-dropdown .checked-item::after,
+.ribbon-dropdown .active::after {
   width: 23px;
   height: 22px;
   top: 0;
@@ -92,7 +96,8 @@
   border: 1px solid #a4cef9;
   background-color: rgba(164, 206, 249, 0.2);
 }
-.ribbon-dropdown .checked-one::before {
+.ribbon-dropdown .checked-one::before,
+.ribbon-dropdown .active::before {
   width: 0.4rem;
   height: 0.4rem;
   border-radius: 50%;
