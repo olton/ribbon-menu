@@ -41,7 +41,7 @@ const App = () => {
                             <RibbonButton caption="Mail" icon="mif-envelop" title="Write Mail"/>
                             <RibbonButton caption="Share" icon="mif-share"/>
                             <RibbonDropdown>
-
+                                <RibbonButton caption="Apps" icon="mif-apps" title="Applications"/>
                             </RibbonDropdown>
                         </RibbonTabGroup>
 

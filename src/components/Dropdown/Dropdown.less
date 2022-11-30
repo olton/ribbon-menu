@@ -1,0 +1,112 @@
+@import "../../common/vars";
+@import "../../common/mixins";
+
+.dropdown {
+    display: block;
+    float: left;
+    width: auto;
+    background: inherit;
+    position: relative;
+
+    .drop-object {
+        position: absolute;
+        z-index: @zindex-dropdown;
+    }
+
+    .drop-object.place-right {
+        left: auto;
+        right: 0;
+    }
+}
+
+.dropdown {
+    .dropdown {
+        width: 100%;
+
+        .drop-object {
+            top: -4px;
+            left: 100%;
+        }
+
+        .dropdown-toggle {
+            padding-right: 2rem;
+        }
+    }
+}
+
+.dropdown.dropped {
+    & > .dropdown-toggle {
+        &::before {
+            .rotate(135deg);
+            transition: @transition-short;
+        }
+    }
+
+    .dropdown.dropped {
+        & > .dropdown-toggle {
+            &::before {
+                .rotate(45deg);
+                transition: @transition-short;
+            }
+        }
+    }
+}
+
+.dropdown-toggle {
+
+    .toggle();
+
+    &.drop-marker-light, &.marker-light  {
+        &::before {
+            border-color: @white;
+        }
+    }
+
+    &.no-marker {
+        &::before {
+            display: none;
+        }
+    }
+
+    &.active-toggle, &.active-container {
+        &::before {
+            .rotate(135deg);
+            transition: @transition-short;
+        }
+    }
+
+    &.marker-center {
+        &::before {
+            left: 50%;
+            top: 50%;
+            margin-left: 0;
+            margin-top: 0;
+            .translateX(-50%);
+            .translateY(-50%);
+            .rotate(-45deg);
+        }
+        &.active-toggle, &.active-container {
+            &::before {
+                .translateX(-50%);
+                .translateY(-50%);
+                .rotate(135deg);
+                transition: @transition-short;
+            }
+        }
+    }
+}
+
+.drop-left {
+    right: 100%;
+    top: 0;
+}
+
+.drop-right {
+    left: 100%;
+    top: 0;
+}
+
+.drop-up {
+    top: auto;
+    bottom: 100%;
+}

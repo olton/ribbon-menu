@@ -4,30 +4,63 @@ import classNames from "classnames";
 import "./Dropdown.css"
 
 export interface RibbonDropdownProps {
-    children: React.ReactNode
+    children?: React.ReactNode
     open: boolean
 }
 
-const RibbonDropdown = (props: RibbonDropdownProps) => {
-    const classes = classNames(
-        'dropdown'
-    )
-    const {children, open} = props
-    const [toggle, menu] = Children.toArray(children)
-    const [isOpen, setOpenState] = useState(false)
+export interface RibbonDropdownState {
+    isOpen: boolean
+}
 
-    return (
-        <div className={classes}>
-            {/*@ts-ignore*/
-                cloneElement(toggle, {
-                onClick: setOpenState(!isOpen)
-            })}
+class RibbonDropdown extends React.Component<any, any>{
+    state: RibbonDropdownState = {
+        isOpen: false
+    }
 
-            <nav className={isOpen ? 'open' : ''}>
-                {menu}
-            </nav>
-        </div>
-    )
+    constructor(props: RibbonDropdownProps) {
+        super(props);
+
+        this.state = {
+            isOpen: false
+        }
+
+        this.toggleState = this.toggleState.bind(this);
+    }
+
+    toggleState(e: Event){
+        const openState = this.state.isOpen;
+
+        this.setState({
+            isOpen: !openState
+        });
+
+        e.preventDefault();
+    }
+
+    render(){
+        const {children} = this.props
+        const [toggle, menu] = Children.toArray(children)
+        const {isOpen} = this.state
+        const classes = classNames(
+            'dropdown',
+            isOpen ? 'dropped' : ''
+        )
+
+        return (
+            <div className={classes}>
+                {/*@ts-ignore*/
+                    toggle && cloneElement(toggle, {
+                        /*@ts-ignore*/
+                        className: ( "props" in toggle && toggle.props.className ? toggle.props.className : '') + ' dropdown-toggle ',
+                        onClick: this.toggleState
+                })}
+
+                <nav className={`drop-object ` + (isOpen ? ' open ' : '')}>
+                    {menu}
+                </nav>
+            </div>
+        )
+    }
 }
 
 export default RibbonDropdown
