@@ -1,0 +1,126 @@
+@import "../../common/vars";
+@import "../../common/mixins";
+
+.ribbon-dropdown {
+    list-style: none inside;
+    margin: 0;
+    width: auto;
+    float: left;
+    display: block;
+    position: absolute;
+    background-color: @ribbonDropdownBackground;
+    color: @dark;
+    padding: 2px;
+    border: 1px solid @ribbonMenuBorder;
+    font-size: 12px;
+    box-shadow: 2px 2px 2px 0 rgba(red(@ribbonDropdownShadow), green(@ribbonDropdownShadow), blue(@ribbonDropdownShadow), .7);
+    z-index: @zindex-dropdown;
+    top: 100%;
+    left: 0;
+
+    li, a {
+        display: block;
+        position: relative;
+        background-color: inherit;
+        color: inherit;
+        height: 24px;
+        cursor: pointer;
+    }
+
+    li {
+        border: 1px solid transparent;
+        padding-left: 24px;
+
+        &:not([disabled]):hover, &:not(.disabled):hover {
+            border-color: @ribbonMenuItemBorder;
+            background-color: @ribbonMenuItemHoverBackground;
+        }
+    }
+
+    a {
+        line-height: 24px;
+        text-decoration: none;
+        padding: 0 8px;
+        border-left: 1px solid @ribbonDropdownDivider;
+        white-space: nowrap;
+    }
+
+    .divider {
+        display: block;
+        height: 1px;
+        width: 100%;
+        position: relative;
+        background-color: @ribbonDropdownDivider;
+        margin: 4px 0;
+        pointer-events:none;
+    }
+
+    .checked, .checked-one, .checked-item {
+        &::before, &::after {
+            position: absolute;
+            display: block;
+            content: "";
+        }
+
+        &::before {
+            background-color: transparent;
+            border-color: @dark;
+            border-left: 2px solid;
+            border-bottom: 2px solid;
+            height: .325rem;
+            width: .5rem;
+            left: .5rem;
+            top: 50%;
+            .translateY(-50%);
+            .rotate(-45deg);
+            z-index: 2;
+        }
+
+        &::after {
+            width: 23px;
+            height: 22px;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    }
+
+    .checked {
+        &::after {
+            border: 1px solid @ribbonMenuItemBorder;
+            background-color: @ribbonMenuItemHoverBackground;
+        }
+    }
+
+    .checked-one {
+        &::before {
+            width: .4rem;
+            height: .4rem;
+            border-radius: 50%;
+            background-color: @dark;
+        }
+    }
+
+    .checked-item:not(.checked) {
+        &::before {
+            border-color: #dadbdc;
+        }
+    }
+
+    .ribbon-dropdown {
+        top: -4px;
+        left: 100%;
+    }
+
+    .dropdown-toggle {
+        &::before {
+            transform: rotate(-135deg) !important;
+        }
+
+        &.active-toggle {
+            &::before {
+                transform: rotate(45deg) !important;
+            }
+        }
+    }
+}

@@ -95,4 +95,10 @@
   top: auto;
   bottom: 100%;
 }
+.drop-object {
+  display: none;
+}
+.drop-object.open {
+  display: block!important;
+}
 /*# sourceMappingURL=Dropdown.css.map */

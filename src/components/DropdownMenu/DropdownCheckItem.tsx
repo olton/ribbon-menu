@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 export interface RibbonDropdownCheckItemProps {
     className?: string,
@@ -9,8 +9,16 @@ export interface RibbonDropdownCheckItemProps {
 }
 
 const RibbonDropdownCheckItem = ({checked, children, className, target, caption, ...rest}: RibbonDropdownCheckItemProps) => {
+    const [checkState, setCheckState] = useState(checked)
+
     return (
-        <li className={className + (children? ' checked ' : '')} {...rest}>
+        <li className={className + (children? ' checked ' : '')} {...rest} onClick={ (e) => {
+                // @ts-ignore
+                const classes = e.target.parentNode.className.split(" ")
+                setCheckState(!classes.includes("checked"))
+                e.preventDefault()
+            }
+        }>
             <a href={target}>{caption || children}</a>
         </li>
     )

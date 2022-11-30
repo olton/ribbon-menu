@@ -10,7 +10,11 @@ import {
     RibbonIconButton,
     RibbonToolButton,
     RibbonButtonGroup,
-    RibbonDropdown
+    RibbonDropdown,
+    RibbonDropdownMenu,
+    RibbonDropdownItem,
+    RibbonDropdownCheckItem,
+    RibbonDropdownDivider
 } from "../dist/esm/index.js";
 
 import "./index.css"
@@ -42,6 +46,29 @@ const App = () => {
                             <RibbonButton caption="Share" icon="mif-share"/>
                             <RibbonDropdown>
                                 <RibbonButton caption="Apps" icon="mif-apps" title="Applications"/>
+                                <RibbonDropdownMenu>
+                                    <RibbonDropdownItem caption="Windows 10"/>
+                                    <RibbonDropdownItem caption="Windows 11"/>
+                                    <RibbonDropdownItem caption="Office 365"/>
+                                    <RibbonDropdownDivider/>
+                                    <RibbonDropdownItem checked caption="Windows 10"/>
+                                    <RibbonDropdownItem checked caption="Windows 11"/>
+                                    <RibbonDropdownItem checked caption="Office 365"/>
+                                    <RibbonDropdownDivider/>
+                                    <RibbonDropdown>
+                                        <RibbonDropdownItem caption="Apps"/>
+                                        <RibbonDropdownMenu>
+                                            <RibbonDropdownItem caption="Windows 10"/>
+                                            <RibbonDropdownItem caption="Windows 11"/>
+                                            <RibbonDropdownItem caption="Office 365"/>
+                                            <RibbonDropdownDivider/>
+                                            <RibbonDropdownCheckItem checked caption="Windows 10"/>
+                                            <RibbonDropdownCheckItem checked caption="Windows 11"/>
+                                            <RibbonDropdownCheckItem checked caption="Office 365"/>
+                                            <RibbonDropdownDivider/>
+                                        </RibbonDropdownMenu>
+                                    </RibbonDropdown>
+                                </RibbonDropdownMenu>
                             </RibbonDropdown>
                         </RibbonTabGroup>
 

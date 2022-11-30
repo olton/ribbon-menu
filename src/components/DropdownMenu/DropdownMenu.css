@@ -1,0 +1,108 @@
+.ribbon-dropdown {
+  list-style: none inside;
+  margin: 0;
+  width: auto;
+  float: left;
+  display: block;
+  position: absolute;
+  background-color: #fbfcfd;
+  color: #000000;
+  padding: 2px;
+  border: 1px solid #dadbdc;
+  font-size: 12px;
+  box-shadow: 2px 2px 2px 0 rgba(227, 228, 229, 0.7);
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+}
+.ribbon-dropdown li,
+.ribbon-dropdown a {
+  display: block;
+  position: relative;
+  background-color: inherit;
+  color: inherit;
+  height: 24px;
+  cursor: pointer;
+}
+.ribbon-dropdown li {
+  border: 1px solid transparent;
+  padding-left: 24px;
+}
+.ribbon-dropdown li:not([disabled]):hover,
+.ribbon-dropdown li:not(.disabled):hover {
+  border-color: #a4cef9;
+  background-color: rgba(164, 206, 249, 0.2);
+}
+.ribbon-dropdown a {
+  line-height: 24px;
+  text-decoration: none;
+  padding: 0 8px;
+  border-left: 1px solid #dcddde;
+  white-space: nowrap;
+}
+.ribbon-dropdown .divider {
+  display: block;
+  height: 1px;
+  width: 100%;
+  position: relative;
+  background-color: #dcddde;
+  margin: 4px 0;
+  pointer-events: none;
+}
+.ribbon-dropdown .checked::before,
+.ribbon-dropdown .checked-one::before,
+.ribbon-dropdown .checked-item::before,
+.ribbon-dropdown .checked::after,
+.ribbon-dropdown .checked-one::after,
+.ribbon-dropdown .checked-item::after {
+  position: absolute;
+  display: block;
+  content: "";
+}
+.ribbon-dropdown .checked::before,
+.ribbon-dropdown .checked-one::before,
+.ribbon-dropdown .checked-item::before {
+  background-color: transparent;
+  border-color: #000000;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  height: 0.325rem;
+  width: 0.5rem;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  z-index: 2;
+}
+.ribbon-dropdown .checked::after,
+.ribbon-dropdown .checked-one::after,
+.ribbon-dropdown .checked-item::after {
+  width: 23px;
+  height: 22px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.ribbon-dropdown .checked::after {
+  border: 1px solid #a4cef9;
+  background-color: rgba(164, 206, 249, 0.2);
+}
+.ribbon-dropdown .checked-one::before {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background-color: #000000;
+}
+.ribbon-dropdown .checked-item:not(.checked)::before {
+  border-color: #dadbdc;
+}
+.ribbon-dropdown .ribbon-dropdown {
+  top: -4px;
+  left: 100%;
+}
+.ribbon-dropdown .dropdown-toggle::before {
+  transform: rotate(-135deg) !important;
+}
+.ribbon-dropdown .dropdown-toggle.active-toggle::before {
+  transform: rotate(45deg) !important;
+}
+/*# sourceMappingURL=DropdownMenu.css.map */
