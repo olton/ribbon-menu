@@ -51,7 +51,7 @@ class RibbonDropdown extends React.Component<any, any>{
                 {/*@ts-ignore*/
                     toggle && cloneElement(toggle, {
                         /*@ts-ignore*/
-                        className: ( "props" in toggle && toggle.props.className ? toggle.props.className : '') + ' dropdown-toggle ',
+                        className: ( "props" in toggle && toggle.props.className ? toggle.props.className : '') + ' dropdown-toggle ' + (isOpen ? ' active-toggle ' : ''),
                         onClick: this.toggleState
                 })}
 
