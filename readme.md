@@ -148,6 +148,8 @@ Creating menu tabs
 </RibbonButtonGroup>
 ```
 
+<hr>
+
 ### Metro UI
 Original component created by [Serhii Pimenov](https://pimenov.com.ua) for [Metro UI](https://korzh.com/metroui).
 
