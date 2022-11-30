@@ -29,7 +29,7 @@ const App = () => {
                 <h5 className={`m-0`}>Component sponsored by <a href={`https://octostar.co/`}>Octostar.co</a> </h5>
             </div>
 
-            <div className={`container window no-overflow`} style={{height: "600px"}}>
+            <div className={`container window no-overflow`} style={{height: "800px"}}>
                 <div className={`window-caption`}>
                     <span className={`caption-title`}>Ribbon Menu For React Demo</span>
                     <div className={`caption-buttons`}>
@@ -51,6 +51,12 @@ const App = () => {
                                     <RibbonDropdownItem caption="Windows 10" onClick={(e)=>{console.log(e)}}/>
                                     <RibbonDropdownItem caption="Windows 11"/>
                                     <RibbonDropdownItem caption="Office 365"/>
+                                    <RibbonDropdownDivider/>
+                                    <RibbonButtonGroup active={2}>
+                                        <RibbonDropdownItem checked caption="Windows 10" onClick={(e)=>{console.log(e)}}/>
+                                        <RibbonDropdownItem checked caption="Windows 11"/>
+                                        <RibbonDropdownItem checked caption="Office 365"/>
+                                    </RibbonButtonGroup>
                                     <RibbonDropdownDivider/>
                                     <RibbonDropdownCheckItem checked caption="Windows 10" onClick={(e)=>{console.log(e)}}/>
                                     <RibbonDropdownCheckItem checked caption="Windows 11"/>

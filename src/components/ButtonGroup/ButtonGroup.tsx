@@ -77,11 +77,12 @@ class RibbonButtonGroup extends React.Component<RibbonButtonGroupProps, RibbonBu
 
     render(){
         const {children, className, classNameActive, classNameButton, style} = this.props;
-        const {buttons} = this.state;
+        const {buttons, radio} = this.state;
         const classes = classNames(
             "ribbon-toggle-group",
             "button-group",
-            className
+            className,
+            radio ? 'radio-group' : 'check-group'
         )
 
         return (

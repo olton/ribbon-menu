@@ -38,7 +38,7 @@
   line-height: 24px;
   text-decoration: none;
   padding: 0 8px;
-  border-left: 1px solid #dcddde;
+  border-left: 1px solid #f1f1f1;
   white-space: nowrap;
 }
 .ribbon-dropdown .divider {
@@ -46,7 +46,7 @@
   height: 1px;
   width: 100%;
   position: relative;
-  background-color: #dcddde;
+  background-color: #f1f1f1;
   pointer-events: none;
 }
 .ribbon-dropdown * + .divider {
@@ -56,21 +56,18 @@
   margin-top: 4px;
 }
 .ribbon-dropdown .checked::before,
-.ribbon-dropdown .checked-one::before,
-.ribbon-dropdown .checked-item::before,
 .ribbon-dropdown .active::before,
+.ribbon-dropdown .check-group .active::before,
 .ribbon-dropdown .checked::after,
-.ribbon-dropdown .checked-one::after,
-.ribbon-dropdown .checked-item::after,
-.ribbon-dropdown .active::after {
+.ribbon-dropdown .active::after,
+.ribbon-dropdown .check-group .active::after {
   position: absolute;
   display: block;
   content: "";
 }
 .ribbon-dropdown .checked::before,
-.ribbon-dropdown .checked-one::before,
-.ribbon-dropdown .checked-item::before,
-.ribbon-dropdown .active::before {
+.ribbon-dropdown .active::before,
+.ribbon-dropdown .check-group .active::before {
   background-color: transparent;
   border-color: #000000;
   border-left: 2px solid;
@@ -83,28 +80,23 @@
   z-index: 2;
 }
 .ribbon-dropdown .checked::after,
-.ribbon-dropdown .checked-one::after,
-.ribbon-dropdown .checked-item::after,
-.ribbon-dropdown .active::after {
+.ribbon-dropdown .active::after,
+.ribbon-dropdown .check-group .active::after {
   width: 23px;
   height: 22px;
   top: 0;
   left: 0;
   z-index: 1;
 }
-.ribbon-dropdown .checked::after {
+.ribbon-dropdown .checked::after,
+.ribbon-dropdown .check-group .active::after {
   border: 1px solid #a4cef9;
   background-color: rgba(164, 206, 249, 0.2);
 }
-.ribbon-dropdown .checked-one::before,
 .ribbon-dropdown .active::before {
   width: 0.4rem;
   height: 0.4rem;
-  border-radius: 50%;
   background-color: #000000;
-}
-.ribbon-dropdown .checked-item:not(.checked)::before {
-  border-color: #dadbdc;
 }
 .ribbon-dropdown .ribbon-dropdown {
   top: -4px;
@@ -115,5 +107,8 @@
 }
 .ribbon-dropdown .dropdown-toggle.active-toggle::before {
   transform: rotate(45deg) !important;
+}
+.ribbon-dropdown .ribbon-toggle-group {
+  border: none!important;
 }
 /*# sourceMappingURL=DropdownMenu.css.map */
