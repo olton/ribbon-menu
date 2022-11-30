@@ -53,9 +53,9 @@ const App = () => {
                                     <RibbonDropdownItem caption="Office 365"/>
                                     <RibbonDropdownDivider/>
                                     <RibbonButtonGroup active={2}>
-                                        <RibbonDropdownItem checked caption="Windows 10" onClick={(e)=>{console.log(e)}}/>
-                                        <RibbonDropdownItem checked caption="Windows 11"/>
-                                        <RibbonDropdownItem checked caption="Office 365"/>
+                                        <RibbonDropdownItem caption="Windows 10" onClick={(e)=>{console.log(e)}}/>
+                                        <RibbonDropdownItem caption="Windows 11"/>
+                                        <RibbonDropdownItem caption="Office 365"/>
                                     </RibbonButtonGroup>
                                     <RibbonDropdownDivider/>
                                     <RibbonDropdownCheckItem checked caption="Windows 10" onClick={(e)=>{console.log(e)}}/>
@@ -74,11 +74,6 @@ const App = () => {
                                             <RibbonDropdownItem caption="Windows 10"/>
                                             <RibbonDropdownItem caption="Windows 11"/>
                                             <RibbonDropdownItem caption="Office 365"/>
-                                            <RibbonDropdownDivider/>
-                                            <RibbonDropdownCheckItem checked caption="Windows 10"/>
-                                            <RibbonDropdownCheckItem checked caption="Windows 11"/>
-                                            <RibbonDropdownCheckItem checked caption="Office 365"/>
-                                            <RibbonDropdownDivider/>
                                         </RibbonDropdownMenu>
                                     </RibbonDropdown>
                                 </RibbonDropdownMenu>

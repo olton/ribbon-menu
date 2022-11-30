@@ -148,6 +148,36 @@ Creating menu tabs
 </RibbonButtonGroup>
 ```
 
+#### Dropdown Menu Checks Group
+```jsx
+<RibbonDropdownMenu>
+    <RibbonDropdownCheckItem checked caption="Windows 10" onClick={(e)=>{...}}/>
+    <RibbonDropdownCheckItem checked caption="Windows 11"/>
+    <RibbonDropdownCheckItem checked caption="Office 365"/>
+</RibbonDropdownMenu>
+```
+or
+```jsx
+<RibbonDropdownMenu>
+    <RibbonButtonGroup active={2}>
+        <RibbonDropdownItem caption="Windows 10" onClick={(e)=>{...}}/>
+        <RibbonDropdownItem caption="Windows 11"/>
+        <RibbonDropdownItem caption="Office 365"/>
+    </RibbonButtonGroup>
+</RibbonDropdownMenu>
+```
+
+#### Dropdown Menu Radio Group 
+```jsx
+<RibbonDropdownMenu>
+    <RibbonButtonGroup active={2} radio>
+        <RibbonDropdownItem caption="Windows 10" onClick={(e)=>{...}}/>
+        <RibbonDropdownItem caption="Windows 11"/>
+        <RibbonDropdownItem caption="Office 365"/>
+    </RibbonButtonGroup>
+</RibbonDropdownMenu>
+```
+
 <hr>
 
 ### Metro UI
