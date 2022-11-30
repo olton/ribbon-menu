@@ -14,7 +14,8 @@ import {
     RibbonDropdownMenu,
     RibbonDropdownItem,
     RibbonDropdownCheckItem,
-    RibbonDropdownDivider
+    RibbonDropdownDivider,
+    RibbonSplitButton
 } from "../dist/esm/index.js";
 
 import "./index.css"
@@ -82,7 +83,14 @@ const App = () => {
                             <RibbonTabSubGroup style={{width: '70px'}}>
                                 <RibbonIconButton caption="Mail" icon="mif-envelop"/>
                                 <RibbonIconButton caption="Share" icon="mif-share"/>
-                                <RibbonIconButton caption="Rocket" icon="mif-rocket"/>
+                                <RibbonDropdown>
+                                    <RibbonIconButton caption="Rocket" icon="mif-rocket"/>
+                                    <RibbonDropdownMenu>
+                                        <RibbonDropdownItem caption="Windows 10"/>
+                                        <RibbonDropdownItem caption="Windows 11"/>
+                                        <RibbonDropdownItem caption="Office 365"/>
+                                    </RibbonDropdownMenu>
+                                </RibbonDropdown>
                             </RibbonTabSubGroup>
 
                             <RibbonTabDivider/>
@@ -94,10 +102,30 @@ const App = () => {
                                 <RibbonToolButton caption="Settings" icon="mif-cogs"/>
                                 <RibbonToolButton caption="Bell" icon="mif-bell"/>
                                 <RibbonToolButton caption="Alarm" icon="mif-alarm"/>
+                                <RibbonDropdown>
+                                    <RibbonToolButton caption="Apps" icon="mif-apps"/>
+                                    <RibbonDropdownMenu>
+                                        <RibbonDropdownItem caption="Windows 10"/>
+                                        <RibbonDropdownItem caption="Windows 11"/>
+                                        <RibbonDropdownItem caption="Office 365"/>
+                                    </RibbonDropdownMenu>
+                                </RibbonDropdown>
                             </RibbonTabSubGroup>
                         </RibbonTabGroup>
 
                         <RibbonTabGroup title="Split Button">
+                            <RibbonSplitButton caption="Options" icon="mif-cog">
+                                <RibbonDropdownMenu>
+                                    <RibbonDropdownItem caption="Windows 10"/>
+                                    <RibbonDropdownItem caption="Windows 11"/>
+                                    <RibbonDropdownItem caption="Office 365"/>
+                                    <RibbonDropdownDivider/>
+                                    <RibbonDropdownCheckItem checked caption="Windows 10"/>
+                                    <RibbonDropdownCheckItem checked caption="Windows 11"/>
+                                    <RibbonDropdownCheckItem checked caption="Office 365"/>
+                                    <RibbonDropdownDivider/>
+                                </RibbonDropdownMenu>
+                            </RibbonSplitButton>
                         </RibbonTabGroup>
 
                         <RibbonTabGroup title="Button Groups">

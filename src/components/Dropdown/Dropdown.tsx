@@ -17,14 +17,34 @@ class RibbonDropdown extends React.Component<any, any>{
         isOpen: false
     }
 
+    private dropdown
+
     constructor(props: RibbonDropdownProps) {
         super(props);
 
         this.state = {
             isOpen: false
         }
-
+        this.dropdown = React.createRef();
         this.toggleState = this.toggleState.bind(this);
+        this.handleClickOutside = this.handleClickOutside.bind(this);
+    }
+
+    componentDidMount(){
+        document.addEventListener("mousedown", this.handleClickOutside)
+    }
+
+    componentWillUnmount(){
+        document.removeEventListener("mousedown", this.handleClickOutside)
+    }
+
+    handleClickOutside (e: Event) {
+        // @ts-ignore
+        if (this.dropdown.current && !this.dropdown.current.contains(e.target)) {
+            this.setState({
+                isOpen: false,
+            })
+        }
     }
 
     toggleState(e: Event){
