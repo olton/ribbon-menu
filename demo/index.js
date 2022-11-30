@@ -43,16 +43,16 @@ const App = () => {
                     <RibbonTab mode="static" label="Home"></RibbonTab>
                     <RibbonTab label="File">
                         <RibbonTabGroup title="Push Buttons">
-                            <RibbonButton caption="Mail" icon="mif-envelop" title="Write Mail"/>
+                            <RibbonButton caption="Mail" icon="mif-envelop" title="Write Mail" onClick={()=>{alert('Mail Button was Clicked!')}}/>
                             <RibbonButton caption="Share" icon="mif-share"/>
                             <RibbonDropdown>
                                 <RibbonButton caption="Apps" icon="mif-apps" title="Applications"/>
                                 <RibbonDropdownMenu>
-                                    <RibbonDropdownItem caption="Windows 10"/>
+                                    <RibbonDropdownItem caption="Windows 10" onClick={(e)=>{console.log(e)}}/>
                                     <RibbonDropdownItem caption="Windows 11"/>
                                     <RibbonDropdownItem caption="Office 365"/>
                                     <RibbonDropdownDivider/>
-                                    <RibbonDropdownCheckItem checked caption="Windows 10"/>
+                                    <RibbonDropdownCheckItem checked caption="Windows 10" onClick={(e)=>{console.log(e)}}/>
                                     <RibbonDropdownCheckItem checked caption="Windows 11"/>
                                     <RibbonDropdownCheckItem checked caption="Office 365"/>
                                     <RibbonDropdownDivider/>

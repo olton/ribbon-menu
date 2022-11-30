@@ -11,16 +11,17 @@ export interface RibbonIconButtonProps {
     icon?: string,
     image?: string,
     caption?: string,
-    children?: any
+    children?: any,
+    onClick?: any
 }
 
-const RibbonIconButton = ({className, icon, image, caption, ...rest}: RibbonIconButtonProps) => {
+const RibbonIconButton = ({className, icon, image, caption, onClick, ...rest}: RibbonIconButtonProps) => {
     const classes = classNames(
         "ribbon-icon-button",
         className
     )
     return (
-        <button className={classes} {...rest}>
+        <button className={classes} {...rest} onClick={onClick}>
             {icon && (
                 <Icon name={icon} />
             )}

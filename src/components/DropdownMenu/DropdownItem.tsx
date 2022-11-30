@@ -4,13 +4,14 @@ export interface RibbonDropdownItemProps {
     className?: string,
     target?: string,
     caption?: string,
-    children?: React.ReactNode
+    children?: React.ReactNode,
+    onClick?: any
 }
 
-const RibbonDropdownItem = ({children, className, target, caption, ...rest}: RibbonDropdownItemProps) => {
+const RibbonDropdownItem = ({children, className, target, caption, onClick, ...rest}: RibbonDropdownItemProps) => {
     return (
         <li className={className} {...rest}>
-            <a href={target}>{caption || children}</a>
+            <a href={target} onClick={onClick}>{caption || children}</a>
         </li>
     )
 }

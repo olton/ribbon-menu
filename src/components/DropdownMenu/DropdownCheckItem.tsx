@@ -1,11 +1,13 @@
 import React from "react";
+import classNames from "classnames";
 
 export interface RibbonDropdownCheckItemProps {
     className?: string,
     target?: string,
     caption?: string,
     children?: React.ReactNode,
-    checked?: boolean
+    checked?: boolean,
+    onClick?: any
 }
 
 export interface RibbonDropdownCheckItemState {
@@ -28,20 +30,19 @@ class RibbonDropdownCheckItem extends React.Component {
 
     render(){
         // @ts-ignore
-        const {className, target, caption, children, ...rest} = this.props
+        const {className, target, caption, children, onClick, ...rest} = this.props
         const {checked} = this.state
 
-        const classes = className + (checked ? ' checked ' : '')
+        const classes = classNames(className, (checked ? ' checked ' : ''))
 
         return (
-            <li className={classes} {...rest} onClick={ (e) => {
+            <li className={classes} {...rest} onClick={ () => {
                     this.setState({
                         checked: !this.state.checked
                     })
-                    e.preventDefault()
                 }
             }>
-                <a href={target}>{caption || children}</a>
+                <a href={target} onClick={onClick}>{caption || children}</a>
             </li>
         )
     }

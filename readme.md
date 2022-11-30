@@ -47,15 +47,15 @@ Creating menu tabs
 
 #### RibbonButton
 ```jsx
-<RibbonButton caption={...} icon={...} image={...} title={...}/>
+<RibbonButton caption={...} icon={...} image={...} title={...} onClick={...}/>
 ```
 ```jsx
-<RibbonButton caption="Mail" icon="mif-envelop" title="Write Mail"/>
+<RibbonButton caption="Mail" icon="mif-envelop" title="Write Mail" onClick={()=>{}}/>
 ```
 
 #### RibbonToolButton
 ```jsx
-<RibbonToolButton caption={...} icon={...} image={...}/>
+<RibbonToolButton caption={...} icon={...} image={...} onClick={...}/>
 ```
 ```jsx
 <RibbonToolButton caption="Mail" icon="mif-envelop"/>
@@ -63,7 +63,7 @@ Creating menu tabs
 
 #### RibbonIconButton
 ```jsx
-<RibbonIconButton caption={...} icon={...} image={...} title={...}/>
+<RibbonIconButton caption={...} icon={...} image={...} title={...} onClick={...}/>
 ```
 ```jsx
 <RibbonIconButton caption="Mail" icon="mif-envelop"/>

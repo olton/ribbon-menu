@@ -1,7 +1,7 @@
 import React, {Children} from "react";
 import classNames from "classnames";
-import RibbonTabNav from "./TabNav";
-import RibbonTab from "./Tab";
+import RibbonTabNav from "../Tabs/TabNav";
+import RibbonTab from "../Tabs/Tab";
 
 import "./RibbonMenu.css"
 

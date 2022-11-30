@@ -39,7 +39,6 @@ class RibbonDropdown extends React.Component<any, any>{
     }
 
     handleClickOutside (e: Event) {
-        console.log(e)
         // @ts-ignore
         if (this.dropdown.current && !this.dropdown.current.contains(e.target)) {
             this.setState({

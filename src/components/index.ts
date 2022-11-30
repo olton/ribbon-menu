@@ -1,10 +1,13 @@
 export {
     RibbonMenu,
+} from "./RibbonMenu"
+
+export {
     RibbonTab,
     RibbonTabDivider,
     RibbonTabGroup,
     RibbonTabSubGroup
-} from "./RibbonMenu"
+} from "./Tabs"
 
 export {default as RibbonButton} from "./Button"
 export {default as RibbonToolButton} from "./ToolButton"

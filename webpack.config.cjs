@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './html/index.js',
+    entry: './demo/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: '[name].bundle.js',
@@ -33,8 +33,8 @@ module.exports = {
     },
     plugins:[
         new HtmlWebpackPlugin({
-            template: "html/index.html",
-            favicon: "html/favicon.ico"
+            template: "demo/index.html",
+            favicon: "demo/favicon.ico"
         })
     ],
     mode: "development",
