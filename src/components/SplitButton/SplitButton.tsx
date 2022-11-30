@@ -1,6 +1,8 @@
 import React, {cloneElement, Children} from "react";
 import classNames from "classnames";
-import {RibbonButton, RibbonDropdown, RibbonIconButton} from "../index";
+import RibbonButton from "../Button";
+import RibbonDropdown from "../Dropdown";
+import RibbonIconButton from "../IconButton";
 
 import "./SplitButton.css"
 
