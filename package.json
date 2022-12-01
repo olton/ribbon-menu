@@ -12,8 +12,8 @@
   "scripts": {
     "build": "rollup -c",
     "test": "jest",
-    "serve": "npm run build && webpack serve --open",
-    "start": "nodemon --watch src -x \"npm run serve\""
+    "serve": "npm run build && webpack serve",
+    "start": "nodemon --watch src -e ts,tsx,less -x \"npm run serve\""
   },
   "author": "Serhii Pimenov <serhii@pimenov.com.ua>",
   "license": "MIT",
