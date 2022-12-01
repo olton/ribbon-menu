@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 export interface CaptionProps {
     className?: string,
@@ -6,9 +7,11 @@ export interface CaptionProps {
 }
 
 export const Caption = ({caption, className}: CaptionProps) => {
+    const classes = classNames(className)
+
     return (
         <span className="caption">
-            <span className={className}>{caption}</span>
+            <span className={classes}>{caption}</span>
         </span>
     )
 }

@@ -8,10 +8,10 @@
     margin: 0;
 
     &:not([disabled]):hover, &:not(.disabled):hover {
-        border-color: @ribbonMenuItemBorder;
+        border-color: var(--itemBorderColor);
 
         .ribbon-split {
-            border-top-color: @ribbonMenuItemBorder;
+            border-top-color: var(--itemBorderColor);
         }
     }
 
@@ -25,7 +25,7 @@
         cursor: pointer;
 
         &:hover {
-            background-color: @ribbonMenuItemHoverBackground;
+            background-color: var(--itemHoverBackground);
         }
     }
 
@@ -73,7 +73,7 @@
                 height: 0;
                 border-style: solid;
                 border-width: 0 0 4px 4px;
-                border-color: transparent transparent @dark transparent;
+                border-color: transparent transparent var(--dropdownToggleColor) transparent;
                 z-index: 1;
             }
         }

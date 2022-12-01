@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 export interface ImageProps {
     className?: string,
@@ -6,9 +7,11 @@ export interface ImageProps {
 }
 
 export const Image = ({src, className}: ImageProps) => {
+    const classes = classNames(className)
+
     return (
         <span className="icon">
-            <img className={className} src={src} />
+            <img className={classes} src={src} />
         </span>
     )
 }

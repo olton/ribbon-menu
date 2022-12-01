@@ -3,7 +3,8 @@
   min-width: 0;
   text-align: center;
   border: 1px solid transparent;
-  background-color: #f5f6f7;
+  background-color: var(--backgroundActiveColor);
+  color: var(--textColor);
   outline: none;
   position: relative;
 }
@@ -34,18 +35,24 @@
 .ribbon-button.dropdown-toggle::before {
   margin-left: -8px;
 }
+.ribbon-button.drop-active {
+  border-color: var(--itemBorderColor);
+  background-color: var(--itemHoverBackground);
+}
 .ribbon-button:hover:enabled,
 .ribbon-button:not(.disabled):hover {
-  border-color: #a4cef9;
-  background-color: rgba(164, 206, 249, 0.2);
+  border-color: var(--itemBorderColor);
+  background-color: var(--itemHoverBackground);
 }
 .ribbon-button:active,
 .ribbon-button.active {
-  border-color: #1979ca;
-  background-color: rgba(164, 206, 249, 0.8) !important;
+  border-color: var(--itemActiveBorderColor);
+  background-color: var(--itemActiveBackground) !important;
+  color: var(--textActiveColor);
 }
 .ribbon-menu .active-container .ribbon-button {
-  border-color: #1979ca;
-  background-color: rgba(164, 206, 249, 0.8) !important;
+  border-color: var(--itemActiveBorderColor);
+  background-color: var(--itemActiveBackground) !important;
+  color: var(--textActiveColor);
 }
 /*# sourceMappingURL=Button.css.map */

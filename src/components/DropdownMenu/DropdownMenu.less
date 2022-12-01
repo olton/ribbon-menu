@@ -8,12 +8,12 @@
     float: left;
     display: block;
     position: absolute;
-    background-color: @ribbonDropdownBackground;
-    color: @dark;
+    background-color: var(--dropdownBackground);
+    color: var(--textColor);
     padding: 2px;
-    border: 1px solid @ribbonMenuBorder;
+    border: 1px solid var(--borderColor);
     font-size: 12px;
-    box-shadow: 2px 2px 2px 0 rgba(red(@ribbonDropdownShadow), green(@ribbonDropdownShadow), blue(@ribbonDropdownShadow), .7);
+    box-shadow: 2px 2px 2px 0 var(--dropdownShadowColor);
     z-index: @zindex-dropdown;
     top: 100%;
     left: 0;
@@ -33,8 +33,8 @@
         user-select: none;
 
         &:not([disabled]):hover, &:not(.disabled):hover {
-            border-color: @ribbonMenuItemBorder;
-            background-color: @ribbonMenuItemHoverBackground;
+            border-color: var(--itemBorderColor);
+            background-color: var(--itemHoverBackground);
         }
     }
 
@@ -42,7 +42,7 @@
         line-height: 24px;
         text-decoration: none;
         padding: 0 8px;
-        border-left: 1px solid @ribbonDropdownDivider;
+        border-left: 1px solid var(--dropdownDividerColor);
         white-space: nowrap;
     }
 
@@ -51,7 +51,7 @@
         height: 1px;
         width: 100%;
         position: relative;
-        background-color: @ribbonDropdownDivider;
+        background-color: var(--dropdownDividerColor);
         pointer-events:none;
     }
 
@@ -72,7 +72,7 @@
 
         &::before {
             background-color: transparent;
-            border-color: @dark;
+            border-color: var(--textColor);
             border-left: 2px solid;
             border-bottom: 2px solid;
             height: .325rem;
@@ -95,8 +95,9 @@
 
     .checked, .check-group .active {
         &::after {
-            border: 1px solid @ribbonMenuItemBorder;
-            background-color: @ribbonMenuItemHoverBackground;
+            border: 1px solid var(--itemBorderColor);
+            background-color: var(--itemHoverBackground);
+            color: var(--textActiveColor);
         }
     }
 
@@ -105,7 +106,7 @@
             width: .4rem;
             height: .4rem;
             //border-radius: 50%;
-            background-color: @dark;
+            background-color: var(--textColor);
         }
     }
 

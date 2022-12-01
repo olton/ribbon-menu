@@ -49,7 +49,7 @@
   background-color: transparent ;
   border-left: 1px solid;
   border-bottom: 1px solid;
-  border-color: #000000;
+  border-color: var(--textColor);
   top: 50%;
   left: 100%;
   margin-left: -1rem;
@@ -61,7 +61,7 @@
 }
 .dropdown-toggle.drop-marker-light::before,
 .dropdown-toggle.marker-light::before {
-  border-color: #ffffff;
+  border-color: var(--dropdownDividerColor);
 }
 .dropdown-toggle.no-marker::before {
   display: none;

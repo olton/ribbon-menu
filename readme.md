@@ -1,6 +1,7 @@
 # Ribbon Menu for React
 
 ![](preview.png)
+![](preview-dark.png)
 
 ### Ribbon Menu - is a command bar that organizes a program's features into a series of tabs.
 

@@ -1,6 +1,41 @@
 @import "../../common/vars";
 @import "../../common/mixins";
 
+:root {
+    --backgroundColor: #ffffff;
+    --backgroundActiveColor: #f5f6f7;
+    --textColor: #000000;
+    --borderColor: #dadbdc;
+    --itemBorderColor: #a4cef9;
+    --itemActiveBorderColor: #1979ca;
+    --itemActiveBackground: rgba(red(#a4cef9), green(#a4cef9), blue(#a4cef9), .8);
+    --itemHoverBackground: rgba(red(#a4cef9), green(#a4cef9), blue(#a4cef9), .2);
+    --dropdownBackground: #fbfcfd;
+    --dropdownDividerColor: #f1f1f1;
+    --dropdownShadowColor: rgba(227, 228, 229, .7);
+    --dropdownToggleColor: #000000;
+    --staticMenuColor: #1979ca;
+    --staticTextColor: #ffffff;
+}
+
+.dark-mode {
+    --backgroundColor: #22272e;
+    --backgroundActiveColor: #22272e;
+    --textColor: #adadad;
+    --textActiveColor: #ffffff;
+    --borderColor: #444c56;
+    --itemBorderColor: #a4cef9;
+    --itemActiveBorderColor: #1979ca;
+    --itemActiveBackground: rgba(red(#a4cef9), green(#a4cef9), blue(#a4cef9), .8);
+    --itemHoverBackground: rgba(red(#a4cef9), green(#a4cef9), blue(#a4cef9), .2);
+    --dropdownBackground: #22272e;
+    --dropdownDividerColor: #444c56;
+    --dropdownShadowColor: rgba(68, 76, 86, .7);
+    --dropdownToggleColor: #ffffff;
+    --staticMenuColor: #1979ca;
+    --staticTextColor: #ffffff;
+}
+
 *,
 *::before,
 *::after { box-sizing:border-box; }
@@ -12,6 +47,8 @@
 .ribbon-menu {
     display: block;
     position: relative;
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
 
     div {
         position: relative;
@@ -28,7 +65,7 @@
         padding: 0;
         position: relative;
         z-index: 1;
-        border-bottom: 1px solid @ribbonMenuBorder;
+        border-bottom: 1px solid var(--borderColor);
     }
 
     .tabs-holder {
@@ -39,17 +76,17 @@
         }
 
         li {
-            color: @dark;
-            background-color: @ribbonMenuBackground;
+            color: var(--textColor);
+            background-color: var(--backgroundColor);
             border-left: 1px solid transparent;
             border-right: 1px solid transparent;
-            border-bottom: 1px solid @ribbonMenuBorder;
+            border-bottom: 1px solid var(--borderColor);
             cursor: pointer;
 
             &:hover {
-                border-left-color: @ribbonMenuBorder;
-                border-right-color: @ribbonMenuBorder;
-                border-top-color: @ribbonMenuBorder;
+                border-left-color: var(--borderColor);
+                border-right-color: var(--borderColor);
+                border-top-color: var(--borderColor);
             }
         }
 
@@ -66,14 +103,14 @@
         }
 
         .active {
-            background-color: @ribbonMenuActiveBackground;
-            border: 1px solid @ribbonMenuBorder;
+            background-color: var(--backgroundActiveColor);
+            border: 1px solid var(--borderColor);
             border-bottom-color: transparent;
         }
 
         .static {
-            background-color: @ribbonMenuStaticBackground;
-            color: @white;
+            background-color: var(--staticMenuColor);
+            color: var(--staticTextColor);
         }
     }
 }
@@ -82,7 +119,7 @@
     .content-holder {
         display: block;
         position: relative;
-        background-color: @ribbonMenuActiveBackground;
+        background-color: var(--backgroundActiveColor);
         border-left: none;
         border-right: none;
     }
@@ -91,7 +128,7 @@
         .ribbon-section {
             display: none;
             padding: 4px 4px;
-            border-bottom: 1px solid @ribbonMenuBorder;
+            border-bottom: 1px solid var(--borderColor);
             justify-content: flex-start;
             flex-shrink: 0;
 
@@ -106,7 +143,7 @@
             margin: 0 4px;
             height: 100%!important;
             width: 1px;
-            background-color: @ribbonMenuBorder;
+            background-color: var(--borderColor);
         }
 
         .group {
@@ -133,7 +170,7 @@
                 height: 20px;
                 font-size: 11px;
                 text-align: center;
-                border-top: 1px solid @ribbonMenuBorder;
+                border-top: 1px solid var(--borderColor);
                 white-space: nowrap;
             }
 
@@ -143,7 +180,7 @@
         }
 
         .group + .group {
-            border-left: 1px solid @ribbonMenuBorder;
+            border-left: 1px solid var(--borderColor);
         }
     }
 }

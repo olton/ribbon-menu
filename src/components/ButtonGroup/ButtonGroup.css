@@ -1,8 +1,8 @@
 .ribbon-toggle-group {
-  background-color: #f8f8f8;
+  background-color: var(--backgroundActiveColor);
   display: flex;
   flex-flow: column wrap;
-  border: 1px solid #dadbdc;
+  border: 1px solid var(--borderColor);
   width: auto;
 }
 .ribbon-toggle-group .ribbon-icon-button {

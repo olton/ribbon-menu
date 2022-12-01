@@ -62,31 +62,38 @@
             height: 0;
             border-style: solid;
             border-width: 0 0 4px 4px;
-            border-color: transparent transparent @dark transparent;
+            border-color: transparent transparent var(--dropdownToggleColor) transparent;
             z-index: 1;
         }
+    }
+
+    &.drop-active {
+        border-color: var(--itemBorderColor);
+        background-color: var(--itemHoverBackground);
     }
 }
 
 .ribbon-icon-button {
     &:hover:enabled, &:not(.disabled):hover {
-        border-color: @ribbonMenuItemBorder;
-        background-color: @ribbonMenuItemHoverBackground;
+        border-color: var(--itemBorderColor);
+        background-color: var(--itemHoverBackground);
     }
 }
 
 .ribbon-icon-button {
     &:active, &.active {
-        border-color: @ribbonMenuItemActiveBorder;
-        background-color: @ribbonMenuItemActiveBackground !important;
+        border-color: var(--itemActiveBorderColor);
+        background-color: var(--itemActiveBackground) !important;
+        color: var(--textActiveColor);
     }
 }
 
 .ribbon-menu {
     .active-container {
         .ribbon-icon-button {
-            border-color: @ribbonMenuItemActiveBorder;
-            background-color: @ribbonMenuItemActiveBackground !important;
+            border-color: var(--itemActiveBorderColor);
+            background-color: var(--itemActiveBackground) !important;
+            color: var(--textActiveColor);
         }
     }
 }
