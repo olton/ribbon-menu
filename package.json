@@ -1,6 +1,6 @@
 {
   "name": "@olton/ribbon-menu",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Ribbon Menu for React (TypeScript)",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
