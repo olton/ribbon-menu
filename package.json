@@ -10,7 +10,7 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "prepublish": "npm version patch && npm run build:prod",
+    "pub": "npm run build:prod && npm version patch",
     "build:prod": "cross-env NODE_ENV=production rollup -c",
     "build": "rollup -c",
     "test": "jest",
