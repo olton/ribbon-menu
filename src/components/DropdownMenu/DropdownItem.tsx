@@ -1,6 +1,6 @@
-import React from "react";
+import React, {FC} from "react";
 
-export interface RibbonDropdownItemProps {
+export interface IRibbonDropdownItemProps {
     className?: string,
     target?: string,
     caption?: string,
@@ -8,7 +8,7 @@ export interface RibbonDropdownItemProps {
     onClick?: any
 }
 
-const RibbonDropdownItem = ({children, className, target, caption, onClick, ...rest}: RibbonDropdownItemProps) => {
+const RibbonDropdownItem: FC<IRibbonDropdownItemProps> = ({children, className, target, caption, onClick, ...rest}) => {
     return (
         <li className={className} {...rest}>
             <a href={target} onClick={onClick}>{caption || children}</a>

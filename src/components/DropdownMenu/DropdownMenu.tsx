@@ -1,14 +1,14 @@
-import React from "react";
+import React, {FC} from "react";
 import classNames from "classnames";
 
 import "./DropdownMenu.css"
 
-export interface RibbonDropdownMenuProps {
+export interface IRibbonDropdownMenuProps {
     children: React.ReactNode,
     className?: string
 }
 
-const RibbonDropdownMenu = ({children, className}: RibbonDropdownMenuProps) => {
+const RibbonDropdownMenu: FC<IRibbonDropdownMenuProps> = ({children, className}) => {
     const classes = classNames("ribbon-dropdown", className)
     return (
         <ul className={classes}>

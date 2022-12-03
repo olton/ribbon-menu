@@ -1,16 +1,26 @@
-import React, {Children} from "react";
+import React, {Children, ReactNode} from "react";
 import classNames from "classnames";
 import RibbonTabNav from "../Tabs/TabNav";
 import RibbonTab from "../Tabs/Tab";
 
 import "./RibbonMenu.css"
 
-export interface RibbonMenuProps {
-    children: React.ReactNode
+export interface IRibbonMenuProps {
+    children?: React.ReactNode,
+    className?: string
 }
 
-class RibbonMenu extends React.Component {
-    constructor(props: RibbonMenuProps) {
+export interface IRibbonMenuState {
+    activeTab: string
+}
+
+class RibbonMenu extends React.Component<IRibbonMenuProps, IRibbonMenuState> {
+
+    state: IRibbonMenuState = {
+        activeTab: ''
+    }
+
+    constructor(props: IRibbonMenuProps) {
         super(props);
 
         const tabs: any[] = Children.toArray(props.children)
@@ -29,36 +39,40 @@ class RibbonMenu extends React.Component {
         this.onTabClick = this.onTabClick.bind(this)
     }
 
-    renderTabs(){
+    renderTabs(): React.ReactNode {
         // @ts-ignore
         const { children = [] } = this.props;
         // @ts-ignore
         const { activeTab } = this.state;
 
-        return Children.map(children, (el, index)=>{
+        // @ts-ignore
+        return Children.map(children, (el: React.ReactElement, index)=>{
+            const {mode, label} = el.props
             return (
                 <RibbonTabNav
                     key={index}
                     index={index}
-                    staticTab={el.props.mode === 'static'}
-                    label={el.props.label}
-                    active={activeTab.toLowerCase() === el.props.label.toLowerCase()}
+                    staticTab={mode && mode === 'static'}
+                    label={label}
+                    active={activeTab.toLowerCase() === label.toLowerCase()}
                     onClick={this.onTabClick}
                 />
             )
         })
     }
 
-    renderSections(){
+    renderSections(): React.ReactNode {
         // @ts-ignore
         const { children = [] } = this.props;
         // @ts-ignore
         const { activeTab } = this.state;
 
         return Children.map(children, (el, index)=>{
+            // @ts-ignore
+            const {label, children} = el.props
             return (
-                <RibbonTab key={index} label={el.props.label.toLowerCase()} active={activeTab === el.props.label.toLowerCase()}>
-                    {el.props.children}
+                <RibbonTab key={index} label={label.toLowerCase()} active={activeTab === label.toLowerCase()}>
+                    {children}
                 </RibbonTab>
             )
         })
@@ -80,7 +94,6 @@ class RibbonMenu extends React.Component {
     render(){
         // @ts-ignore
         const {children, className, ...attrs} = this.props
-        // const {activeTab} = this.state
 
         const classes = classNames(
             `ribbon-menu`,

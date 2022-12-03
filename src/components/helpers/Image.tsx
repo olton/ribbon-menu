@@ -1,12 +1,12 @@
-import React from "react";
+import React, {FC} from "react";
 import classNames from "classnames";
 
-export interface ImageProps {
+export interface IImageProps {
     className?: string,
     src?: string,
 }
 
-export const Image = ({src, className}: ImageProps) => {
+export const Image: FC<IImageProps> = ({src, className}) => {
     const classes = classNames(className)
 
     return (

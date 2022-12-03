@@ -1,10 +1,11 @@
-import React from "react";
+import React, {FC} from "react";
 
-export interface RibbonTabSubGroupProps {
-    children: React.ReactNode
+export interface IRibbonTabSubGroupProps {
+    children?: React.ReactNode
+    style?: any
 }
 
-const RibbonTabSubGroup = ({children, ...rest}: RibbonTabSubGroupProps) => {
+const RibbonTabSubGroup: FC<IRibbonTabSubGroupProps> = ({children, ...rest}) => {
     return (
         <div className="ribbon-sub-group" {...rest}>
             {children}

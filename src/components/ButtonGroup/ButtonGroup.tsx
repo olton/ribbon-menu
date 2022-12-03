@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import "./ButtonGroup.css"
 
-export interface RibbonButtonGroupProps {
+export interface IRibbonButtonGroupProps {
     active?: number | number[],
     radio?: boolean,
     children?: React.ReactNode,
@@ -14,19 +14,19 @@ export interface RibbonButtonGroupProps {
     onButtonClick?: any,
 }
 
-export interface RibbonButtonGroupState {
+export interface IRibbonButtonGroupState {
     radio: boolean,
     buttons: any
 }
 
-class RibbonButtonGroup extends React.Component<RibbonButtonGroupProps, RibbonButtonGroupState> {
+class RibbonButtonGroup extends React.Component<IRibbonButtonGroupProps, IRibbonButtonGroupState> {
 
-    state: RibbonButtonGroupState = {
+    state: IRibbonButtonGroupState = {
         radio: false,
         buttons: []
     }
 
-    constructor(props: RibbonButtonGroupProps){
+    constructor(props: IRibbonButtonGroupProps){
         super(props);
 
         const {active, radio = false} = props

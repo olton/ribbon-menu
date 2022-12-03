@@ -1,11 +1,11 @@
 import classNames from "classnames";
-import React from "react";
+import React, {FC} from "react";
 import {Icon} from "../helpers/Icon";
 import {Image} from "../helpers/Image";
 
 import "./ToolButton.css"
 
-export interface RibbonToolButtonProps {
+export interface IRibbonToolButtonProps {
     className?: string,
     icon?: string,
     image?: string,
@@ -14,7 +14,7 @@ export interface RibbonToolButtonProps {
     onClick?: any
 }
 
-const RibbonToolButton = ({className, caption = '', icon, image, onClick, ...rest}: RibbonToolButtonProps) => {
+const RibbonToolButton: FC<IRibbonToolButtonProps> = ({className, caption = '', icon, image, onClick, ...rest}) => {
     const classes = classNames(
         "ribbon-tool-button",
         className

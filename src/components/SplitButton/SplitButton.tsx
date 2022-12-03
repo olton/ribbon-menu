@@ -1,4 +1,4 @@
-import React, {cloneElement, Children} from "react";
+import React, {cloneElement, Children, FC} from "react";
 import classNames from "classnames";
 import RibbonButton from "../Button";
 import RibbonDropdown from "../Dropdown";
@@ -6,7 +6,7 @@ import RibbonIconButton from "../IconButton";
 
 import "./SplitButton.css"
 
-export interface RibbonSplitButtonProps {
+export interface IRibbonSplitButtonProps {
     children: React.ReactNode,
     caption?: string,
     icon?: string,
@@ -14,10 +14,9 @@ export interface RibbonSplitButtonProps {
     onClick?: any
 }
 
-const RibbonSplitButton = ({children, caption, icon, image, onClick, ...rest}: RibbonSplitButtonProps) => {
+const RibbonSplitButton: FC<IRibbonSplitButtonProps> = ({children, caption, icon, image, onClick, ...rest}) => {
     const [menu] = Children.toArray(children)
     const classes = classNames("ribbon-split-button")
-
 
     return (
         <div className={classes}>

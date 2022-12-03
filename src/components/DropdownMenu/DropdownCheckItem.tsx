@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-export interface RibbonDropdownCheckItemProps {
+export interface IRibbonDropdownCheckItemProps {
     className?: string,
     target?: string,
     caption?: string,
@@ -10,17 +10,17 @@ export interface RibbonDropdownCheckItemProps {
     onClick?: any
 }
 
-export interface RibbonDropdownCheckItemState {
+export interface IRibbonDropdownCheckItemState {
     checked: boolean
 }
 
-class RibbonDropdownCheckItem extends React.Component {
+class RibbonDropdownCheckItem extends React.Component<IRibbonDropdownCheckItemProps, IRibbonDropdownCheckItemState> {
 
-    state: RibbonDropdownCheckItemState = {
+    state: IRibbonDropdownCheckItemState = {
         checked: false
     }
 
-    constructor(props: RibbonDropdownCheckItemProps) {
+    constructor(props: IRibbonDropdownCheckItemProps) {
         super(props);
 
         this.state = {
@@ -38,7 +38,7 @@ class RibbonDropdownCheckItem extends React.Component {
         return (
             <li className={classes} {...rest} onClick={ () => {
                     this.setState({
-                        checked: !this.state.checked
+                        checked: !checked
                     })
                 }
             }>

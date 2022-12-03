@@ -1,12 +1,12 @@
-import React from "react";
+import React, {FC} from "react";
 import classNames from "classnames";
 
-export interface CaptionProps {
+export interface ICaptionProps {
     className?: string,
     caption?: string,
 }
 
-export const Caption = ({caption, className}: CaptionProps) => {
+export const Caption: FC<ICaptionProps> = ({caption, className}) => {
     const classes = classNames(className)
 
     return (

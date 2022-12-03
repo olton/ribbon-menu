@@ -3,23 +3,23 @@ import classNames from "classnames";
 
 import "./Dropdown.css"
 
-export interface RibbonDropdownProps {
+export interface IRibbonDropdownProps {
     children?: React.ReactNode
-    open: boolean
+    open?: boolean
 }
 
-export interface RibbonDropdownState {
+export interface IRibbonDropdownState {
     isOpen: boolean
 }
 
-class RibbonDropdown extends React.Component<any, any>{
-    state: RibbonDropdownState = {
+class RibbonDropdown extends React.Component<IRibbonDropdownProps, IRibbonDropdownState>{
+    state: IRibbonDropdownState = {
         isOpen: false
     }
 
-    private dropdown: any
+    private readonly dropdown: any
 
-    constructor(props: RibbonDropdownProps) {
+    constructor(props: IRibbonDropdownProps) {
         super(props);
 
         this.state = {

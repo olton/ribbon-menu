@@ -1,12 +1,12 @@
-import React from "react";
+import React, {FC} from "react";
 import classNames from "classnames";
 
-export interface IconProps {
+export interface IIconProps {
     className?: string,
     name?: string,
 }
 
-export const Icon = ({name, className}: IconProps) => {
+export const Icon: FC<IIconProps> = ({name, className}) => {
     const classes = classNames(className)
     return (
         <span className="icon">

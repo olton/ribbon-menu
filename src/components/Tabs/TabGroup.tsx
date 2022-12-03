@@ -1,13 +1,13 @@
-import React from "react";
+import React, {FC} from "react";
 import classNames from "classnames";
 
-export interface RibbonTabGroupProps {
+export interface IRibbonTabGroupProps {
     className?: string,
     title?: string,
     children: React.ReactNode,
 }
 
-const RibbonTabGroup = ({className, children, title, ...rest}: RibbonTabGroupProps) => {
+const RibbonTabGroup: FC<IRibbonTabGroupProps> = ({className, children, title, ...rest}) => {
     const classes = classNames(
         'group',
         className

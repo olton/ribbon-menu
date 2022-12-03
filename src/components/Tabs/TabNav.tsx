@@ -1,16 +1,17 @@
-import React from "react";
+import React, {FC} from "react";
 import classNames from "classnames";
 
-export interface RibbonTabNavProps {
+export interface IRibbonTabNavProps {
     staticTab: boolean,
     label: string,
     active: boolean,
     className?: string,
     onClick: any,
-    index: number
+    index: number,
+    mode?: string
 }
 
-const RibbonTabNav = ({staticTab, label, active, className, onClick, index}: RibbonTabNavProps) => {
+const RibbonTabNav: FC<IRibbonTabNavProps> = ({staticTab, label, active, className, onClick, index}) => {
     const classes = classNames(
         className,
         {static: staticTab},

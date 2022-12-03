@@ -1,14 +1,15 @@
-import React from "react";
+import React, {FC} from "react";
 import classNames from "classnames";
 
-export interface RibbonTabProps {
-    active: boolean,
+export interface IRibbonTabProps {
+    active?: boolean,
     className?: string,
+    mode?: 'static' | 'default',
     label?: string,
-    children: React.ReactNode
+    children?: React.ReactNode
 }
 
-const RibbonTab = ({active, className, children}: RibbonTabProps) => {
+const RibbonTab: FC<IRibbonTabProps> = ({active, className, children}) => {
     const classes = classNames(
         `ribbon-section`,
         className,

@@ -5,6 +5,7 @@ import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import replace from '@rollup/plugin-replace';
 
 export default [
     {
@@ -13,12 +14,12 @@ export default [
             {
                 file: "dist/cjs/index.js",
                 format: "cjs",
-                sourcemap: true,
+                sourcemap: process.env.NODE_ENV !== "production",
             },
             {
                 file: "dist/esm/index.js",
                 format: "esm",
-                sourcemap: true,
+                sourcemap: process.env.NODE_ENV !== "production",
             },
         ],
         plugins: [
@@ -27,7 +28,13 @@ export default [
             commonjs(),
             typescript({ tsconfig: "./tsconfig.json" }),
             postcss(),
-            terser(),
+            replace({
+                exclude: 'node_modules/**',
+                ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+                preventAssignment: true,
+            }),
+            (process.env.NODE_ENV === 'production' && terser()),
+
         ],
     },
     {
