@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 import classNames from "classnames";
 
-import "./DropdownMenu.css"
+import "./DropdownMenu.less"
 
 export interface IRibbonDropdownMenuProps {
     children: React.ReactNode,

@@ -1,14 +1,14 @@
 @import "../../common/vars";
 
 .ribbon-toggle-group {
-    background-color: var(--backgroundActiveColor);
+    background-color: var(--backgroundGroupColor);
     display: flex;
     flex-flow: column wrap;
     //max-height: 90px;
     border: 1px solid var(--borderColor);
     width: auto;
 
-    .ribbon-icon-button {
+    .ribbon-icon-button, .ribbon-tool-button {
         height: 20px;
         margin: 1px;
         background-color: inherit;
@@ -20,5 +20,11 @@
         & > * {
             height: 18px;
         }
+    }
+}
+
+.ribbon-dropdown {
+    .ribbon-toggle-group {
+        background-color: inherit!important;
     }
 }

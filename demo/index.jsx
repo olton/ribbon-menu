@@ -16,9 +16,9 @@ import {
     RibbonDropdownCheckItem,
     RibbonDropdownDivider,
     RibbonSplitButton
-} from "../dist/esm/index.js";
+} from "../src/index";
 
-import "./index.css"
+import "./index.less"
 
 const App = () => {
     return (
@@ -162,5 +162,5 @@ const App = () => {
     )
 }
 
-const root = createRoot(document.getElementById('app'))
+const root = createRoot(document.getElementById('root'))
 root.render(<App />, );

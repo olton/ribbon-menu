@@ -1,7 +1,7 @@
 import React, {Children, cloneElement, useState} from "react";
 import classNames from "classnames";
 
-import "./Dropdown.css"
+import "./Dropdown.less"
 
 export interface IRibbonDropdownProps {
     children?: React.ReactNode

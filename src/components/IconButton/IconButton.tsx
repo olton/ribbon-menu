@@ -4,7 +4,7 @@ import {Icon} from "../helpers/Icon";
 import {Image} from "../helpers/Image";
 import {Caption} from "../helpers/Caption";
 
-import "./IconButton.css"
+import "./IconButton.less"
 
 export interface IRibbonIconButtonProps {
     className?: string,

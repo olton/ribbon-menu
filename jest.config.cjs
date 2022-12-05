@@ -4,6 +4,6 @@ module.exports = {
         "^.+\\.(ts|tsx|js|jsx)$": "ts-jest"
     },
     moduleNameMapper: {
-        ".(css|less|scss)$": "identity-obj-proxy",
+        "\\.(less|css)$": "jest-less-loader"
     },
 };

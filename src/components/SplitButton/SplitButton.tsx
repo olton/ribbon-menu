@@ -4,7 +4,7 @@ import RibbonButton from "../Button";
 import RibbonDropdown from "../Dropdown";
 import RibbonIconButton from "../IconButton";
 
-import "./SplitButton.css"
+import "./SplitButton.less"
 
 export interface IRibbonSplitButtonProps {
     children: React.ReactNode,

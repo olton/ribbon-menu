@@ -3,7 +3,7 @@ import React, {FC} from "react";
 import {Icon} from "../helpers/Icon";
 import {Image} from "../helpers/Image";
 
-import "./ToolButton.css"
+import "./ToolButton.less"
 
 export interface IRibbonToolButtonProps {
     className?: string,

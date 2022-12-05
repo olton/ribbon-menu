@@ -3,7 +3,7 @@ import classNames from "classnames";
 import RibbonTabNav from "../Tabs/TabNav";
 import RibbonTab from "../Tabs/Tab";
 
-import "./RibbonMenu.css"
+import "./RibbonMenu.less"
 
 export interface IRibbonMenuProps {
     children?: React.ReactNode,

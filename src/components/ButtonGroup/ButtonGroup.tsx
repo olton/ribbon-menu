@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-import "./ButtonGroup.css"
+import "./ButtonGroup.less"
 
 export interface IRibbonButtonGroupProps {
     active?: number | number[],
