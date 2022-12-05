@@ -19,7 +19,7 @@ Contextual tabs are tabs that appear only when the user needs them.
 
 ## Install
 ```shell
-npm install --save @olton/ribbon-menu
+npm install --save @metroui/ribbon-menu
 ```
 
 ## Using
