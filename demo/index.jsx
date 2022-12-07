@@ -39,7 +39,7 @@ const App = () => {
                     </div>
                 </div>
 
-                <RibbonMenu className="dark-mode1">
+                <RibbonMenu className="dark-mode">
                     <RibbonTab mode="static" label="Home"></RibbonTab>
                     <RibbonTab label="File">
                         <RibbonTabGroup title="Push Buttons">
