@@ -9,7 +9,7 @@ export interface IIconProps {
 export const Icon: FC<IIconProps> = ({name, className}) => {
     const classes = classNames(className)
     return (
-        <span className="icon">
+        <span className="ribbon-icon">
             <span className={`${name} ${classes}`}></span>
         </span>
     )
