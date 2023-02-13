@@ -37,6 +37,20 @@ class RibbonMenu extends React.Component<IRibbonMenuProps, IRibbonMenuState> {
         }
 
         this.onTabClick = this.onTabClick.bind(this)
+        this.windowResize = this.windowResize.bind(this)
+    }
+
+    componentDidMount() {
+        window.addEventListener("resize", this.windowResize)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("resize", this.windowResize)
+    }
+
+    windowResize(){
+        const height = window.innerHeight
+        const width = window.innerWidth
     }
 
     renderTabs(): React.ReactNode {
