@@ -16,6 +16,8 @@ export interface IRibbonMenuState {
 
 class RibbonMenu extends React.Component<IRibbonMenuProps, IRibbonMenuState> {
 
+    myRef
+
     state: IRibbonMenuState = {
         activeTab: ''
     }
@@ -36,6 +38,8 @@ class RibbonMenu extends React.Component<IRibbonMenuProps, IRibbonMenuState> {
             activeTab: tabs[staticTabs+1] ? tabs[staticTabs+1].props.label.toLowerCase() : ''
         }
 
+        this.myRef = React.createRef()
+
         this.onTabClick = this.onTabClick.bind(this)
         this.windowResize = this.windowResize.bind(this)
     }
@@ -49,8 +53,20 @@ class RibbonMenu extends React.Component<IRibbonMenuProps, IRibbonMenuState> {
     }
 
     windowResize(){
-        const height = window.innerHeight
-        const width = window.innerWidth
+        const menu: any = this.myRef.current
+        const menuRect = menu.getBoundingClientRect()
+        const width = menuRect.width
+        const sections = menu.querySelectorAll(".ribbon-section.active")
+
+        sections.forEach((s: any )=> {
+            const groups = Array.from(s.querySelectorAll(".group"))
+            const move = groups.filter((g: any, index)=>{
+                const {x, width: w} = g.getBoundingClientRect()
+                const inView = width > x + w
+                return !inView
+            })
+            console.log(move)
+        })
     }
 
     renderTabs(): React.ReactNode {
@@ -114,8 +130,9 @@ class RibbonMenu extends React.Component<IRibbonMenuProps, IRibbonMenuState> {
             className
         )
 
-        return (
-            <nav className={classes} {...attrs}>
+
+        return (// @ts-ignore
+            <nav className={classes} {...attrs} ref={this.myRef}>
                 <ul className={`tabs-holder`}>
                     {this.renderTabs()}
                 </ul>

@@ -1,5 +1,6 @@
 import React from "react";
 import { createRoot } from 'react-dom/client';
+import {MifIcon} from "@metroui/icons";
 import {
     RibbonMenu,
     RibbonTab,
@@ -39,7 +40,7 @@ const App = () => {
                     </div>
                 </div>
 
-                <RibbonMenu className="dark-mode">
+                <RibbonMenu>
                     <RibbonTab mode="static" label="Home"></RibbonTab>
                     <RibbonTab label="File">
                         <RibbonTabGroup title="Push Buttons">
