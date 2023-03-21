@@ -1,7 +1,7 @@
 {
   "name": "@metroui/ribbon-menu",
   "description": "Ribbon Menu for React (Vite, TypeScript)",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "license": "MIT",
   "author": "Serhii Pimenov <serhii@pimenov.com.ua> (https://pimenov.com.ua)",
   "keywords": [
@@ -47,7 +47,6 @@
     }
   ],
   "dependencies": {
-    "@metroui/icons": "^0.1.0",
     "classnames": "^2.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

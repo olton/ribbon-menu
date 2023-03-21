@@ -9,8 +9,12 @@
     position: relative;
 
     .drop-object {
-        position: absolute;
+        position: fixed;
         z-index: @zindex-dropdown;
+
+        .drop-object {
+            position: absolute;
+        }
     }
 
     .drop-object.place-right {
