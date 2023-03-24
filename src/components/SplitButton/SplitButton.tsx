@@ -11,16 +11,18 @@ export interface IRibbonSplitButtonProps {
     caption?: string,
     icon?: string,
     image?: string,
-    onClick?: any
+    onClick?: any,
+    buttonClassName?: string,
 }
 
-const RibbonSplitButton: FC<IRibbonSplitButtonProps> = ({children, caption, icon, image, onClick, ...rest}) => {
+const RibbonSplitButton: FC<IRibbonSplitButtonProps> = ({children, caption, icon, image, onClick, buttonClassName, ...rest}) => {
     const [menu] = Children.toArray(children)
     const classes = classNames("ribbon-split-button")
+    const classesButton = classNames("ribbon-main", buttonClassName)
 
     return (
         <div className={classes}>
-            <RibbonButton icon={icon} image={image} className="ribbon-main" onClick={onClick} {...rest}/>
+            <RibbonButton icon={icon} image={image} className={classesButton} onClick={onClick} {...rest}/>
 
             <RibbonDropdown>
                 <RibbonIconButton caption={caption} className="ribbon-split dropdown-toggle"/>

@@ -117,7 +117,7 @@ const App = () => {
                                 </RibbonTabGroup>
 
                                 <RibbonTabGroup title="Split Button">
-                                    <RibbonSplitButton caption="Options" icon="mif-cog">
+                                    <RibbonSplitButton caption="Options" icon="mif-cog" buttonClassName="disabled">
                                         <RibbonDropdownMenu>
                                             <RibbonDropdownItem caption="Windows 10"/>
                                             <RibbonDropdownItem caption="Windows 11"/>
