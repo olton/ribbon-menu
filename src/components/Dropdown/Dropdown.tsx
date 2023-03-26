@@ -49,6 +49,15 @@ class RibbonDropdown extends React.Component<IRibbonDropdownProps, IRibbonDropdo
 
     toggleState(e: Event){
         const openState = this.state.isOpen;
+        const dropdown = this.dropdown.current
+        const dropObject = dropdown.querySelector(".drop-object")
+        const rectDropdown = dropdown.getBoundingClientRect()
+        const position = getComputedStyle(dropObject)["position"]
+
+        if (position === "fixed") {
+            dropObject.style.top = (rectDropdown.top + rectDropdown.height) + "px"
+            dropObject.style.left = (rectDropdown.left) + "px"
+        }
 
         this.setState({
             isOpen: !openState
@@ -73,7 +82,7 @@ class RibbonDropdown extends React.Component<IRibbonDropdownProps, IRibbonDropdo
                     toggle && cloneElement(toggle, {
                         /*@ts-ignore*/
                         className: ( "props" in toggle && toggle.props.className ? toggle.props.className : '') + ' dropdown-toggle ' + (isOpen ? ' drop-active active-toggle ' : ''),
-                        onClick: this.toggleState
+                        onClick: this.toggleState,
                 })}
 
                 <nav className={`drop-object ` + (isOpen ? ' open ' : '')}>

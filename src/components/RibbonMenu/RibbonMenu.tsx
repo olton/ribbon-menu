@@ -65,7 +65,6 @@ class RibbonMenu extends React.Component<IRibbonMenuProps, IRibbonMenuState> {
                 const inView = width > x + w
                 return !inView
             })
-            console.log(move)
         })
     }
 
