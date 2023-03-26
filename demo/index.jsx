@@ -151,7 +151,7 @@ const App = () => {
                                     <RibbonButtonGroup active={[1, 3]} style={{width: "74px", display: "flex", flexFlow: "row", justifyContent: "center"}}>
                                         <RibbonToolButton caption="Italic" icon="mif-italic"/>
                                         <RibbonToolButton caption="Bold" icon="mif-bold"/>
-                                        <RibbonToolButton caption="Underline" icon="mif-underline"/>
+                                        <RibbonToolButton caption="Underline" icon="mif-underline" hotkey="ctrl+h"/>
                                     </RibbonButtonGroup>
 
                                 </RibbonTabGroup>

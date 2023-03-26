@@ -8,10 +8,11 @@ export interface IRibbonTabNavProps {
     className?: string,
     onClick: any,
     index: number,
-    mode?: string
+    mode?: string,
+    hotkey?: string,
 }
 
-const RibbonTabNav: FC<IRibbonTabNavProps> = ({staticTab, label, active, className, onClick, index}) => {
+const RibbonTabNav: FC<IRibbonTabNavProps> = ({hotkey = "", staticTab, label, active, className, onClick, index}) => {
     const classes = classNames(
         className,
         {static: staticTab},
@@ -23,7 +24,7 @@ const RibbonTabNav: FC<IRibbonTabNavProps> = ({staticTab, label, active, classNa
             <a data-label={label.toLowerCase()}
                data-static={staticTab}
                data-key={index}
-               href={`#${label.toLowerCase()}`}>
+               href={`#${label.toLowerCase()}`} data-hotkey={hotkey}>
                 {label}
             </a>
         </li>

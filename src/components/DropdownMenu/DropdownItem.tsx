@@ -5,13 +5,14 @@ export interface IRibbonDropdownItemProps {
     target?: string,
     caption?: string,
     children?: React.ReactNode,
-    onClick?: any
+    onClick?: any,
+    hotkey?: string,
 }
 
-const RibbonDropdownItem: FC<IRibbonDropdownItemProps> = ({children, className, target, caption, onClick, ...rest}) => {
+const RibbonDropdownItem: FC<IRibbonDropdownItemProps> = ({hotkey = "", children, className, target, caption, onClick, ...rest}) => {
     return (
         <li className={className} {...rest}>
-            <a href={target} onClick={onClick}>{caption || children}</a>
+            <a href={target} onClick={onClick} data-hotkey={hotkey}>{caption || children}</a>
         </li>
     )
 }

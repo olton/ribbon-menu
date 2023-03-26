@@ -7,7 +7,8 @@ export interface IRibbonDropdownCheckItemProps {
     caption?: string,
     children?: React.ReactNode,
     checked?: boolean,
-    onClick?: any
+    onClick?: any,
+    hotkey?: string
 }
 
 export interface IRibbonDropdownCheckItemState {
@@ -30,7 +31,7 @@ class RibbonDropdownCheckItem extends React.Component<IRibbonDropdownCheckItemPr
 
     render(){
         // @ts-ignore
-        const {className, target, caption, children, onClick, ...rest} = this.props
+        const {hotkey = "", className, target, caption, children, onClick, ...rest} = this.props
         const {checked} = this.state
 
         const classes = classNames(className, (checked ? ' checked ' : ''))
@@ -42,7 +43,7 @@ class RibbonDropdownCheckItem extends React.Component<IRibbonDropdownCheckItemPr
                     })
                 }
             }>
-                <a href={target} onClick={onClick}>{caption || children}</a>
+                <a href={target} onClick={onClick} data-hotkey={hotkey}>{caption || children}</a>
             </li>
         )
     }
