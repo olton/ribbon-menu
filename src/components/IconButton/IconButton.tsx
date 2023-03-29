@@ -14,15 +14,16 @@ export interface IRibbonIconButtonProps {
     children?: any,
     onClick?: any,
     hotkey?: string,
+    title?: string,
 }
 
-const RibbonIconButton: FC<IRibbonIconButtonProps> = ({hotkey = "", children, className, icon, image, caption, onClick, ...rest}) => {
+const RibbonIconButton: FC<IRibbonIconButtonProps> = ({title, hotkey = "", children, className, icon, image, caption, onClick, ...rest}) => {
     const classes = classNames(
         "ribbon-icon-button",
         className
     )
     return (
-        <button className={classes} {...rest} onClick={onClick} data-hotkey={hotkey}>
+        <button className={classes} {...rest} onClick={onClick} title={title} data-hotkey={hotkey}>
             {children}
 
             {icon && (

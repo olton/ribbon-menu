@@ -143,13 +143,13 @@ const App = () => {
                                     </RibbonButtonGroup>
 
                                     <RibbonButtonGroup style={{width: "100px"}}>
-                                        <RibbonIconButton caption="Italic" icon="mif-italic"/>
+                                        <RibbonIconButton caption="Italic" icon="mif-italic" title="Set italic text"/>
                                         <RibbonIconButton caption="Bold" icon="mif-bold"/>
                                         <RibbonIconButton caption="Underline" icon="mif-underline"/>
                                     </RibbonButtonGroup>
 
                                     <RibbonButtonGroup active={[1, 3]} style={{width: "74px", display: "flex", flexFlow: "row", justifyContent: "center"}}>
-                                        <RibbonToolButton caption="Italic" icon="mif-italic"/>
+                                        <RibbonToolButton caption="Italic" icon="mif-italic" title="Set italic text"/>
                                         <RibbonToolButton caption="Bold" icon="mif-bold"/>
                                         <RibbonToolButton caption="Underline" icon="mif-underline" hotkey="ctrl+h"/>
                                     </RibbonButtonGroup>
