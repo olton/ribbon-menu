@@ -1,7 +1,7 @@
 {
   "name": "@metroui/ribbon-menu",
   "description": "Ribbon Menu for React (Vite, TypeScript)",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "license": "MIT",
   "author": "Serhii Pimenov <serhii@pimenov.com.ua> (https://pimenov.com.ua)",
   "keywords": [
@@ -46,6 +46,10 @@
       "url": "https://korzh.com/metroui#licensing"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olton/ribbon-menu.git"
+  },
   "dependencies": {
     "classnames": "^2.3.2",
     "react": "^18.2.0",
